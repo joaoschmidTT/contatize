@@ -1,0 +1,24 @@
+name: contatize
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  slideable: ^0.0.2
+  sqflite: ^2.3.3+2
+  flutter_masked_text3: ^0.9.4
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - 'img/'
