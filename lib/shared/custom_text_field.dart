@@ -5,6 +5,10 @@ class CustomTextField extends StatelessWidget {
   final TextInputType inputType;
   final TextInputAction textInputAction;
   final bool isPassword;
+  final TextEditingController controller;
+  final FormFieldValidator<String>? validator; // Adicionado para validação
+  
+
 
   const CustomTextField({
     super.key,
@@ -12,6 +16,8 @@ class CustomTextField extends StatelessWidget {
     required this.inputType,
     this.textInputAction = TextInputAction.next,
     this.isPassword = false,
+    required this.controller,
+    this.validator, // Adicionado aqui
   });
 
   @override
@@ -19,9 +25,8 @@ class CustomTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: TextFormField(
-        validator: (value) {
-          return null;
-        },
+        controller: controller, // Adicionando o controller
+        validator: validator, // Usando o validator
         decoration: InputDecoration(
           labelText: label,
           border: const OutlineInputBorder(),
